@@ -1,0 +1,2 @@
+# Module 9 Challenge - sql-challenge
+For this challenge, we had to design tables to hold data from csv files and import this data into a SQL database. With the database, we then had to create a data analysis.
