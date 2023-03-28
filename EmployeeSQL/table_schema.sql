@@ -1,16 +1,16 @@
-create table Departments(
+create table departments(
 	dept_no varchar(30) not null PRIMARY KEY,
 	dept_name varchar(30) not null
 );
 
-create table Titles(
-	title_id varchar(30) not NULL PRIMARY KEY,
-	title varchar(30) not NULL
+create table titles(
+	title_id varchar(30) not null PRIMARY KEY,
+	title varchar(30) not null
 );
 
-create table Employees(
+create table employees(
 	emp_no int not null PRIMARY KEY,
-	emp_title_id varchar(30) NOT null,
+	emp_title_id varchar(30) not null,
 	birth_date date not null,
 	first_name varchar(30) not null,
 	last_name varchar(30) not null,
@@ -19,21 +19,21 @@ create table Employees(
 	FOREIGN KEY (emp_title_id) references titles(title_id)
 );
 
-create table Dept_emp(
+create table dept_emp(
 	emp_no int not null ,
 	dept_no varchar(30) not null,
 	FOREIGN KEY (emp_no) references employees(emp_no),
 	FOREIGN KEY (dept_no) references departments(dept_no)
 );
 
-create table Dept_manager(
+create table dept_manager(
 	dept_no varchar(30) not null,
 	emp_no int not null,
 	FOREIGN KEY (dept_no) references departments(dept_no),
 	FOREIGN KEY (emp_no) references employees(emp_no)
 );
 
-create table Salaries(
+create table salaries(
 	emp_no int not null,
 	salary int not null,
 	FOREIGN KEY (emp_no) references employees(emp_no)
